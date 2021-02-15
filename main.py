@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 import pickle
 
 colunas = ['tamanho','ano','garagem']
-model_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', '..','models','modelo.sav'))
+model_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), 'models','modelo.sav'))
 modelo = pickle.load(open(model_path,'rb'))
 
 
@@ -41,4 +41,5 @@ def cotacao():
     preco = modelo.predict([dados_input])
     return jsonify(preco=preco[0])
 
-app.run(debug=True,host='0.0.0.0')
+if __name__ == "__main__":
+    app.run(debug=True,host='0.0.0.0')
