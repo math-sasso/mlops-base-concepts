@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 import pickle
 
 colunas = ['tamanho','ano','garagem']
-modelo = pickle.load(open('models/modelo.sav','rb'))
+modelo = pickle.load(open('../../models/modelo.sav','rb'))
 
 
 app = Flask(__name__)
