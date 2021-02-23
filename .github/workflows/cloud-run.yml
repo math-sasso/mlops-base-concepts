@@ -57,7 +57,7 @@ jobs:
         gcloud builds submit \
           --quiet \
           --config cloudbuild.yaml \
-          --substitutions _BASIC_AUTH_USERNAME=$BASIC_AUTH_USERNAME,_BASIC_AUTH_PASSWORD=$BASIC_AUTH_PASSWORD,_IMAGE_TAG=gcr.io/$PROJECT_ID/$SERVICE:$GITHUB_SHA
+          --substitutions _BASIC_AUTH_USERNAME=${{env.BASIC_AUTH_USERNAME}},_BASIC_AUTH_PASSWORD=${{env.BASIC_AUTH_PASSWORD}},_IMAGE_TAG=gcr.io/${{env.PROJECT_ID}}/${{env.SERVICE}}:${{  github.sha }}
 
     # Deploy image to Cloud Run
     - name: Deploy
