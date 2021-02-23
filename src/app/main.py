@@ -6,7 +6,8 @@ from sklearn.linear_model import LinearRegression
 import pickle
 
 colunas = ['tamanho','ano','garagem']
-model_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', '..','models','modelo.sav'))
+# model_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', '..','models','modelo.sav'))
+model_path = os.path.join('models','modelo.sav')
 modelo = pickle.load(open(model_path,'rb'))
 
 
